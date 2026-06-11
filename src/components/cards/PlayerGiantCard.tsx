@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Sparkles, Activity, Eye } from 'lucide-react';
+import { Sparkles, Activity } from 'lucide-react';
 import { Player } from '../../types';
 import { KitPatternSVG } from './KitPatternSVG';
 import { RadarPolygonSVG } from '../charts/RadarPolygonSVG';
@@ -7,10 +7,9 @@ import { RadarPolygonSVG } from '../charts/RadarPolygonSVG';
 interface CardProps {
   player: Player;
   onSelectCompare?: (player: Player) => void;
-  isCompact?: boolean;
 }
 
-export const PlayerGiantCard: React.FC<CardProps> = ({ player, onSelectCompare, isCompact = false }) => {
+export const PlayerGiantCard: React.FC<CardProps> = ({ player, onSelectCompare }) => {
   const [activeTab, setActiveTab] = useState<'profile' | 'telemetry' | 'radar'>('profile');
 
   return (
